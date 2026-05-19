@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Diff my image | Comparador de Imágenes">
+	<main>
+		<!-- Hero Section -->
+		<section class="hero-section text-center py-5">
+			<div class="container py-5">
+				<h1 class="display-3 fw-bold mb-3">Diff my image</h1>
+				<p class="lead mb-4 mx-auto" style="max-width: 700px;">
+					Herramienta de software con interfaz gráfica para comparar imágenes y obtener métricas de similitud estructural y error cuadrático.
+				</p>
+				<div class="d-flex justify-content-center gap-3">
+					<a href="/diff-my-image-web/descargas" class="btn btn-primary btn-lg px-4">Descargar Aplicación</a>
+					<a href="https://github.com/tcasaniv/Diff-my-image" class="btn btn-light btn-lg px-4">Ver en GitHub</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Features Section -->
+		<section class="py-5 bg-white">
+			<div class="container">
+				<h2 class="text-center mb-5 fw-bold">Características Principales</h2>
+				<div class="row justify-content-center">
+					<div class="col-lg-10">
+						<div class="row g-5">
+							<div class="col-md-6">
+								<h3 class="fw-bold h4">Algoritmos Avanzados</h3>
+								<p class="text-muted">Utiliza <strong>SSIM</strong> (Similitud Estructural) para una comparación basada en la percepción humana y <strong>MSE</strong> para un análisis matemático del error.</p>
+							</div>
+							<div class="col-md-6">
+								<h3 class="fw-bold h4">Visualización de Diferencias</h3>
+								<p class="text-muted">Genera mapas de calor visuales que resaltan las discrepancias entre las imágenes usando colormaps divergentes (Azul/Rojo).</p>
+							</div>
+							<div class="col-md-6">
+								<h3 class="fw-bold h4">Gestión de Historial</h3>
+								<p class="text-muted">Mantiene un registro de todas tus comparaciones, permitiendo restaurar estados anteriores y visualizar resultados previos.</p>
+							</div>
+							<div class="col-md-6">
+								<h3 class="fw-bold h4">Exportación de Datos</h3>
+								<p class="text-muted">Exporta tus resultados fácilmente a formatos <strong>CSV</strong> y <strong>Markdown</strong> para informes técnicos o documentación.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Multi-platform Badge -->
+		<section class="py-5 bg-light border-top">
+			<div class="container text-center">
+				<h3 class="fw-bold mb-4">Disponible para todas las plataformas</h3>
+				<div class="d-flex justify-content-center flex-wrap gap-2">
+					<span class="badge bg-dark px-3 py-2">Windows</span>
+					<span class="badge bg-dark px-3 py-2">Linux</span>
+					<span class="badge bg-dark px-3 py-2">macOS</span>
+					<span class="badge bg-dark px-3 py-2">Android</span>
+					<span class="badge bg-dark px-3 py-2">iOS</span>
+				</div>
+				<p class="mt-4 mb-0">Licencia <strong>GPLv3</strong>. Software libre desarrollado con Python y Flet.</p>
+			</div>
+		</section>
+	</main>
+</Layout>

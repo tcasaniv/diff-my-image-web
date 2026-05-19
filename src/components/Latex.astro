@@ -1,0 +1,26 @@
+---
+import katex from 'katex';
+import 'katex/dist/katex.min.css';
+
+interface Props {
+	formula: string;
+	inline?: boolean;
+}
+
+const { formula, inline = false } = Astro.props;
+
+const html = katex.renderToString(formula, {
+	throwOnError: false,
+	displayMode: !inline,
+});
+---
+
+<span class="latex-wrapper" set:html={html} />
+
+<style is:global>
+	.katex-display {
+		margin: 1em 0;
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+</style>

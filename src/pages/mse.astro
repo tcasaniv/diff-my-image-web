@@ -1,0 +1,72 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Latex from "../components/Latex.astro";
+---
+
+<Layout title="Sobre MSE (Mean Squared Error) | Diff my image">
+  <main class="py-5">
+    <div class="container" style="max-width: 960px;">
+      <h1 class="fw-bold mb-4">MSE: Mean Squared Error</h1>
+      <p class="lead mb-5 text-muted">
+        Fundamentos del Error Cuadrático Medio, la métrica base para medir la fidelidad matemática en el procesamiento de señales.
+      </p>
+
+      <section class="mb-5">
+        <h2 class="h4 fw-bold mb-4 text-primary border-bottom pb-2">
+          1. Concepto
+        </h2>
+        <p>
+          El <strong>MSE (Mean Squared Error)</strong> es un método clásico para medir el error promedio al cuadrado entre dos imágenes. Es una de las métricas más básicas y utilizadas en el procesamiento de señales y visión por computador.
+        </p>
+        <p>
+          Un valor de <strong>0</strong> indica que las imágenes son absolutamente idénticas. A mayor valor, mayor es la discrepancia matemática entre ellas.
+        </p>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="h4 fw-bold mb-4 text-primary border-bottom pb-2">
+          2. ¿Cómo funciona?
+        </h2>
+        <p>
+          Calcula la diferencia al cuadrado entre cada píxel correspondiente de las dos imágenes y luego promedia esos valores. Al elevar al cuadrado las diferencias, el MSE:
+        </p>
+        <ul>
+            <li>Asegura que todos los errores sean positivos.</li>
+            <li>Penaliza mucho más los errores grandes que los pequeños, lo que lo hace sensible a valores atípicos (outliers).</li>
+        </ul>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="h4 fw-bold mb-4 text-primary border-bottom pb-2">
+          3. Representación Matemática
+        </h2>
+        <p>
+          La fórmula del MSE para dos imágenes <Latex formula="I_1" inline /> e <Latex formula="I_2" inline /> de dimensiones <Latex formula="M \times N" inline /> es:
+        </p>
+        <div class="card bg-light border-0 p-4 mb-4 text-center fs-4">
+          <Latex
+            formula="MSE = \\frac{1}{M \\cdot N} \\sum_{i=0}^{M-1} \\sum_{j=0}^{N-1} [ I_1(i, j) - I_2(i, j) ]^2"
+          />
+        </div>
+        <div class="ps-3 border-start">
+            <p class="small text-muted mb-1">Donde:</p>
+            <ul class="small text-muted">
+                <li><Latex formula="M, N" inline />: Dimensiones de la imagen (ancho y alto).</li>
+                <li><Latex formula="I_1(i, j)" inline />: Valor del píxel en la posición <Latex formula="(i, j)" inline /> de la Imagen 1.</li>
+                <li><Latex formula="I_2(i, j)" inline />: Valor del píxel en la posición <Latex formula="(i, j)" inline /> de la Imagen 2.</li>
+                <li><Latex formula="\sum \sum" inline />: Doble sumatoria sobre todas las filas y columnas.</li>
+            </ul>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="h4 fw-bold mb-4 text-primary border-bottom pb-2">
+          4. Limitaciones
+        </h2>
+        <p>
+          Aunque matemáticamente robusto, el MSE no siempre refleja fielmente la percepción visual humana. Dos imágenes pueden tener el mismo MSE respecto a una original pero verse muy diferentes para una persona. Por esta razón, suele utilizarse en conjunto con métricas perceptuales como el SSIM.
+        </p>
+      </section>
+    </div>
+  </main>
+</Layout>

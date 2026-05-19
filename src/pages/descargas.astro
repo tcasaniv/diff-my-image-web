@@ -1,0 +1,134 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Descargas e Instalación | Diff my image">
+  <main class="py-5">
+    <div class="container" style="max-width: 960px;">
+      <h1 class="fw-bold mb-4">Descargar e Instalar Diff my image</h1>
+      <p class="lead mb-5 text-muted">
+        Sigue esta guía para configurar tu entorno y ejecutar la herramienta de comparación de imágenes.
+      </p>
+
+      <!-- Descarga y Ejecución -->
+      <section class="mb-5 text-center py-5 bg-light rounded shadow-sm">
+        <h2 class="h4 fw-bold mb-4 text-primary border-bottom pb-2 text-start px-4">
+          1. Descargar y Ejecutar
+        </h2>
+        <p class="mb-4">Para comenzar, descarga el código fuente y descomprímelo en tu computadora.</p>
+        <a href="https://github.com/tcasaniv/Diff-my-image/archive/refs/heads/main.zip" class="btn btn-primary btn-lg px-5 py-3 fw-bold shadow mb-4">
+          Descargar Diff my image (ZIP)
+        </a>
+        <div class="text-start px-4">
+            <h5 class="fw-bold">Pasos siguientes:</h5>
+            <ol>
+                <li><strong>Descomprime</strong> el archivo <code>main.zip</code> en una carpeta de tu preferencia.</li>
+                <li><strong>Entra</strong> en la carpeta resultante (ej. <code>Diff-my-image-main</code>).</li>
+                <li><strong>Ejecuta</strong> el script de desarrollo según tu sistema:</li>
+            </ol>
+        </div>
+        <div class="row mt-4 px-4">
+            <div class="col-md-6">
+              <div class="p-3 border rounded bg-white h-100">
+                <h4 class="h6 fw-bold mb-2">Windows</h4>
+                <p class="small mb-2">Doble clic en:</p>
+                <code class="d-block p-2 bg-dark text-white rounded">flet_run_dev.bat</code>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 border rounded bg-white h-100">
+                <h4 class="h6 fw-bold mb-2">Linux / macOS</h4>
+                <p class="small mb-2">En la terminal:</p>
+                <code class="d-block p-2 bg-dark text-white rounded">bash flet_run_dev.sh</code>
+              </div>
+            </div>
+          </div>
+        <div class="mt-4">
+          <a href="https://github.com/tcasaniv/Diff-my-image" class="text-muted small">
+            <i class="bi bi-github"></i> Ver repositorio en GitHub
+          </a>
+        </div>
+      </section>
+
+      <!-- Configuración Manual -->
+      <section class="mb-5">
+        <h2 class="h4 fw-bold mb-4 text-primary border-bottom pb-2">
+          2. Instalación Manual (Avanzado)
+        </h2>
+        <p>Si prefieres configurar el entorno manualmente, sigue estos pasos:</p>
+        
+        <div class="card border-0 shadow-sm p-4 bg-white">
+          <div class="mb-4">
+            <h6 class="fw-bold">Paso 1: Clonar y preparar entorno</h6>
+            <pre class="bg-dark text-white p-3 rounded"><code>git clone https://github.com/tcasaniv/Diff-my-image.git
+cd Diff-my-image
+python -m venv venv</code></pre>
+          </div>
+
+          <div class="mb-4">
+            <h6 class="fw-bold">Paso 2: Activar entorno virtual</h6>
+            <p class="small text-muted">Windows:</p>
+            <code class="d-block p-2 bg-light border rounded mb-2">venv\Scripts\activate</code>
+            <p class="small text-muted">Linux / macOS:</p>
+            <code class="d-block p-2 bg-light border rounded">source venv/bin/activate</code>
+          </div>
+
+          <div>
+            <h6 class="fw-bold">Paso 3: Instalar dependencias y ejecutar</h6>
+            <pre class="bg-dark text-white p-3 rounded"><code>pip install -r requirements.txt
+flet run</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Alternativas -->
+      <section class="mb-5">
+        <h2 class="h4 fw-bold mb-4 text-primary border-bottom pb-2">
+          3. Gestores Alternativos (uv / Poetry)
+        </h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <h5 class="h6 fw-bold">Usando uv</h5>
+                <pre class="bg-dark text-white p-2 rounded small"><code>uv run flet run</code></pre>
+            </div>
+            <div class="col-md-6">
+                <h5 class="h6 fw-bold">Usando Poetry</h5>
+                <pre class="bg-dark text-white p-2 rounded small"><code>poetry install
+poetry run flet run</code></pre>
+            </div>
+        </div>
+      </section>
+
+      <!-- Crear Aplicación -->
+      <section class="mb-5">
+        <h2 class="h4 fw-bold mb-4 text-primary border-bottom pb-2">
+          4. Compilar para otras plataformas
+        </h2>
+        <p>Diff my image puede compilarse como aplicación nativa usando Flet:</p>
+        <div class="table-responsive">
+            <table class="table table-sm table-bordered">
+                <thead class="table-light">
+                    <tr><th>Plataforma</th><th>Comando de compilación</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Android</td><td><code>flet build apk</code></td></tr>
+                    <tr><td>iOS</td><td><code>flet build ipa</code></td></tr>
+                    <tr><td>macOS</td><td><code>flet build macos</code></td></tr>
+                    <tr><td>Linux</td><td><code>flet build linux</code></td></tr>
+                    <tr><td>Windows</td><td><code>flet build windows</code></td></tr>
+                </tbody>
+            </table>
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  pre {
+    font-size: 0.9rem;
+  }
+  code {
+    color: var(--accent-color);
+  }
+</style>

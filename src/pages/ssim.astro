@@ -1,0 +1,88 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Latex from "../components/Latex.astro";
+---
+
+<Layout title="Sobre SSIM (Structural Similarity Index) | Diff my image">
+  <main class="py-5">
+    <div class="container" style="max-width: 960px;">
+      <h1 class="fw-bold mb-4">SSIM: Structural Similarity Index</h1>
+      <p class="lead mb-5 text-muted">
+        Análisis técnico del Índice de Similitud Estructural, una métrica que prioriza la percepción humana sobre el error matemático puro.
+      </p>
+
+      <section class="mb-5">
+        <h2 class="h4 fw-bold mb-4 text-primary border-bottom pb-2">
+          1. Concepto
+        </h2>
+        <p>
+          El <strong>SSIM</strong> es un método para medir la similitud entre dos imágenes. A diferencia de métricas como el MSE, el SSIM está diseñado para mejorar los métodos tradicionales basándose en la percepción humana, considerando los cambios en la información estructural.
+        </p>
+        <p>
+          El índice varía entre <strong>-1 y 1</strong>, donde el valor <strong>1</strong> indica que las imágenes son estructuralmente idénticas.
+        </p>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="h4 fw-bold mb-4 text-primary border-bottom pb-2">
+          2. ¿Cómo funciona?
+        </h2>
+        <p>
+          El SSIM considera tres factores clave en la comparación de imágenes:
+        </p>
+        <div class="row g-4 mt-2">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                    <h5 class="fw-bold">Luminancia</h5>
+                    <p class="small text-muted">Compara la intensidad media de los píxeles.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                    <h5 class="fw-bold">Contraste</h5>
+                    <p class="small text-muted">Mide la desviación estándar de las intensidades.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 text-center">
+                    <h5 class="fw-bold">Estructura</h5>
+                    <p class="small text-muted">Analiza la correlación entre las señales de las imágenes.</p>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="h4 fw-bold mb-4 text-primary border-bottom pb-2">
+          3. Representación Matemática
+        </h2>
+        <p>
+          La fórmula simplificada del SSIM entre dos ventanas <Latex formula="x" inline /> y <Latex formula="y" inline /> de tamaño común es:
+        </p>
+        <div class="card bg-light border-0 p-4 mb-4 text-center fs-4">
+          <Latex
+            formula="SSIM(x, y) = \\frac{(2\\mu_x\\mu_y + c_1)(2\\sigma_{xy} + c_2)}{(\\mu_x^2 + \\mu_y^2 + c_1)(\\sigma_x^2 + \\sigma_y^2 + c_2)}"
+          />
+        </div>
+        <div class="ps-3 border-start">
+            <p class="small text-muted mb-1">Donde:</p>
+            <ul class="small text-muted">
+                <li><Latex formula="\\mu_x, \\mu_y" inline />: Medias (luminancia) de las imágenes.</li>
+                <li><Latex formula="\\sigma_x^2, \\sigma_y^2" inline />: Varianzas (contraste).</li>
+                <li><Latex formula="\\sigma_{xy}" inline />: Covarianza (estructura).</li>
+                <li><Latex formula="c_1, c_2" inline />: Constantes para estabilizar la división.</li>
+            </ul>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="h4 fw-bold mb-4 text-primary border-bottom pb-2">
+          4. Aplicaciones y Estándar
+        </h2>
+        <p>
+          SSIM es actualmente el estándar en la industria para evaluar la calidad de imagen y video, ya que se correlaciona mucho mejor con el juicio humano que el error cuadrático medio. Es fundamental en la compresión de video, transmisión de datos y restauración de imágenes.
+        </p>
+      </section>
+    </div>
+  </main>
+</Layout>
